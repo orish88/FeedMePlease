@@ -40,6 +40,19 @@ public class Recipe {
 
     public static Recipe[] getRecipes(Ingredient[] ingredients){
 
+        String strIngr = "";
+        for(int i=0; i<ingredients.length;i++){
+            strIngr += ingredients[i].name;
+            if(i>0){
+                strIngr +="+";
+            }
+        }
+        String getRequestURL = "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?q="+strIngr;
+        String key1 = "X-Mashape-Key";
+        String value1 = "k0od1PUczFmshycscTJ1SsAYQUKwp18ABlsjsnMnnKXqYYCkBb";
+        String key2 = "Accept";
+        String value2 = "application/json";
+
         JSONObject jsn = null;
         try {
             jsn = new JSONObject(someJSON);
