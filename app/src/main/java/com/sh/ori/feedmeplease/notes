@@ -1,0 +1,30 @@
+
+
+FoodMood:
+
+Screens:
+
+Signing\logging:
+    - Using firebase user
+    - Adding:
+        - acdress
+        - ~other user stuff
+    -
+
+Feed:
+    - Using firebase
+    - Taking eventObjects from firebase and showing them
+    - Map: Google map fragment, being updated by:
+        - Info in the app itself, from the feed
+        -
+    -
+
+What you got:
+    -
+
+
+
+
+
+ Objects:
+
