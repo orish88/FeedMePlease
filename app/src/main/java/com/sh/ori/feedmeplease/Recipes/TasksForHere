@@ -1,0 +1,6 @@
+in function "getRecipes" need to change "someJSON" to be real and good JSON text.
+
+example code that now works:
+        ingredient bread = new ingredient("bread");
+        ingredient[] ingredients = new ingredient[]{bread};
+        Recipe[] recipes = getRecipes(ingredients);
