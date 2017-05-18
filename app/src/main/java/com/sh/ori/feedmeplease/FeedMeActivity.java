@@ -79,7 +79,7 @@ public class FeedMeActivity extends AppCompatActivity implements View.OnClickLis
                     int id = context.getResources().getIdentifier(productName, "drawable", context.getPackageName());
                     Log.d("notes   " ,""+id);
                     curImBt.setImageResource(id);
-//
+//ded
 
                 }
             }
