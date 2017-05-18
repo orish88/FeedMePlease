@@ -93,7 +93,6 @@ public class FeedMeActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void addPics(ArrayList<String> productList){
-
         for(String productName: productList){
             int counter = 1;
             if(counter <= 7) {
@@ -130,9 +129,4 @@ public class FeedMeActivity extends AppCompatActivity implements View.OnClickLis
         return null;
 
     }
-
-
-
-
-
 }
