@@ -1,5 +1,6 @@
 package com.sh.ori.feedmeplease;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,32 +16,7 @@ import java.util.Map;
 
 public class FeedMeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public Map picMap;
-    public void initializePicMap(){
-//        picMap.put("almunds",new FoodPicInfo("almunds",R.drawable.almunds_expert,R.drawable.almunds_expert_v);
-//        picMap.put("basil",new FoodPicInfo("basil", R.drawable.basil_expert,R.drawable.basil_expert_v_));
-        picMap.put("bread",R.drawable.bread_basic);
-        picMap.put("broccoli",R.drawable.broccoli_medium);
-        picMap.put("butter",R.drawable.butter_medium);
-        picMap.put("carrot",R.drawable.carrot_medium);
-        picMap.put("chalapinio",R.drawable.chalapinio_expert);
-        picMap.put("cheese",R.drawable.cheese_medium);
-        picMap.put("cream",R.drawable.cream_expert);
-//        picMap.put("eggplant",R.drawable.eggplant_medium);
-//        picMap.put("eggs",R.drawable.eggs_basic);
-//        picMap.put("fish",R.drawable.fish_basic);
-//        picMap.put("garlic",R.drawable.garlic_expert);
-//        picMap.put("lemon",R.drawable.lemon_medium);
-//        picMap.put("milk",R.drawable.milk_basic);
-//        picMap.put("mushroom",R.drawable.mushroom_medium);
-//        picMap.put("pasta",R.drawable.pasta_basic);
-//        picMap.put("rice",R.drawable.rice_basic);
-//        picMap.put("thyme",R.drawable.thyme_expert);
-//        picMap.put("tomato",R.drawable.tomato_basic);
-//        picMap.put("wallnuts",R.drawable.wallnuts_expert);
-
-    }
-    static ArrayList<String> foodList1 = new ArrayList<>(Arrays.asList("bread","thyme","tomato","lemon"));
+    static ArrayList<String> foodList1 = new ArrayList<>(Arrays.asList("eggs_basic","bread_basic","fish_basic","milk_basic","pasta_basic","rice_basic","tomato_basic"));
     static ArrayList<String> foodList2 = new ArrayList<>(Arrays.asList("cheese","carrot","eggs"));
     static ArrayList<String> foodList3 = new ArrayList<> ( Arrays.asList("bread","butter","pasta","rice"));
     static int listCounter = 1;
@@ -50,8 +26,7 @@ public class FeedMeActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_me);
-        picMap = new HashMap();
-//        initializePicMap();
+
         btAddPic = (Button) findViewById(R.id.bt_feed_me_submit);
         btAddPic.setOnClickListener(this);
         imBt1 = (ImageButton) findViewById(R.id.im_bt_food1);
@@ -93,15 +68,18 @@ public class FeedMeActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void addPics(ArrayList<String> productList){
+        Log.d("notes   " ,"****************************************************");
         for(String productName: productList){
+
             int counter = 1;
             if(counter <= 7) {
                 ImageButton curImBt = getImageButton(counter++);
                 if(curImBt != null){
-                    curImBt.setTag(productName);
-                    Log.d("notes","prodName: "+productName+" val: "+picMap.get(productName));
-                    curImBt.setImageResource((int)picMap.get(productName));
-//                    curImBt.setImageResource(R.drawable.p1);
+                    Context context = curImBt.getContext();
+                    int id = context.getResources().getIdentifier(productName, "drawable", context.getPackageName());
+                    Log.d("notes   " ,""+id);
+                    curImBt.setImageResource(id);
+
 
                 }
             }
@@ -129,4 +107,9 @@ public class FeedMeActivity extends AppCompatActivity implements View.OnClickLis
         return null;
 
     }
+
+
+
+
+
 }
