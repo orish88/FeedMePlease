@@ -4,9 +4,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 /**
  * Created by omer on 18/05/2017.
@@ -30,25 +35,36 @@ public class Recipe {
     public void setImageURL(String imageURL){
         this.imageURL = imageURL;
     }
+    public String getImageURL() {return this.imageURL;}
 
     public int compareTo(Recipe other){
         return Float.compare(this.matchRate, other.matchRate);
     }
 
+
+
+
+
     public static Recipe[] getRecipes(Ingredient[] ingredients, String jsonStr){
 
-        String strIngr = "";
-        for(int i=0; i<ingredients.length;i++){
-            strIngr += ingredients[i].name;
-            if(i>0){
-                strIngr +="+";
-            }
-        }
-        String getRequestURL = "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?q="+strIngr;
-        String key1 = "X-Mashape-Key";
-        String value1 = "k0od1PUczFmshycscTJ1SsAYQUKwp18ABlsjsnMnnKXqYYCkBb";
-        String key2 = "Accept";
-        String value2 = "application/json";
+//        InputStream is = Recipe.class.getResourceAsStream( "sample-json.txt");
+////        String jsonTxt = IOUtils.toString( is );
+//        String someStr = is.toString();
+
+//        JSONObject json = (JSONObject) JSONSerializer.toJSON( jsonTxt );
+
+//        String strIngr = "";
+//        for(int i=0; i<ingredients.length;i++){
+//            strIngr += ingredients[i].name;
+//            if(i>0){
+//                strIngr +="+";
+//            }
+//        }
+//        String getRequestURL = "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?q="+strIngr;
+//        String key1 = "X-Mashape-Key";
+//        String value1 = "k0od1PUczFmshycscTJ1SsAYQUKwp18ABlsjsnMnnKXqYYCkBb";
+//        String key2 = "Accept";
+//        String value2 = "application/json";
 
         JSONObject jsn = null;
         try {

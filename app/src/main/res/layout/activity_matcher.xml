@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_matcher"
     android:layout_width="match_parent"
@@ -8,6 +9,41 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sh.ori.feedmeplease.MatcherActivity">
+    tools:context="com.sh.ori.feedmeplease.MatcherActivity"
+    android:layout_margin="@android:dimen/app_icon_size"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_x="@dimen/activity_vertical_margin"
+    android:layout_y="@android:dimen/notification_large_icon_height">
 
+    <ImageButton
+    android:layout_height="100dp"
+    app:srcCompat="@drawable/left_errow_red_small"
+    android:id="@+id/imageButton"
+    android:layout_width="100dp"
+    android:maxWidth="@android:dimen/app_icon_size"
+    android:layout_alignParentTop="false"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"/>
+
+    <ImageButton
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/right_errow_blue_large"
+        android:id="@+id/imageButton2"
+        android:layout_width="100dp"
+        android:maxWidth="@android:dimen/app_icon_size"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <ImageButton
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/user_main"
+        android:id="@+id/user_image"
+        android:layout_width="100dp"
+        android:maxWidth="@android:dimen/app_icon_size"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitCenter"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
 </RelativeLayout>
