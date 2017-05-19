@@ -63,7 +63,6 @@ public class MatcherActivity extends AppCompatActivity {
                         Log.println(Log.INFO,"Omer","imageURL:");
                         Log.println(Log.INFO,"Omer",recipes[0].getImageURL());
                         Log.println(Log.INFO,"Omer","end");
-
                     }
 
                     public Map<String, String> getHeaders() throws AuthFailureError {
