@@ -41,9 +41,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void initializePicMap(){
-        picMap.put("background",R.drawable.first_screen_background);
-        picMap.put("feedMeLarge",R.drawable.first_screen_feed_me_large);
-        picMap.put("scrollDown",R.drawable.first_screen_scroll_down);
-    }
 }

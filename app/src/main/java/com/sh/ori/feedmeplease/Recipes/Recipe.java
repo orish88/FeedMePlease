@@ -38,7 +38,7 @@ public class Recipe {
 
 
 
-    public static Recipe[] getRecipes(Ingredient[] ingredients){
+    public static Recipe[] getRecipes(Ingredient[] ingredients, String jsonStr){
 
         String strIngr = "";
         for(int i=0; i<ingredients.length;i++){
