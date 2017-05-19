@@ -7,10 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
+    //aqua: 31.776640, 35.197886
+    //dorms: 31.768740, 35.198462
+    private FirebaseAuth mAuth;
 
     public Map picMap;
     ImageButton imBtFeedMe, imBtGotoEventFeed;
@@ -18,11 +25,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            startActivity(new Intent(getApplicationContext(),SigningActivity.class));
+            finish();
+        }
+
         imBtFeedMe = (ImageButton) findViewById(R.id.im_bt_goto_feed_me);
         imBtFeedMe.setOnClickListener(this);
         imBtGotoEventFeed = (ImageButton) findViewById(R.id.im_bt_open_event_feed);
         imBtGotoEventFeed.setOnClickListener(this);
-
 
 
     }

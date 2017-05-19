@@ -35,9 +35,6 @@ public class Recipe {
         return Float.compare(this.matchRate, other.matchRate);
     }
 
-
-
-
     public static Recipe[] getRecipes(Ingredient[] ingredients, String jsonStr){
 
         String strIngr = "";

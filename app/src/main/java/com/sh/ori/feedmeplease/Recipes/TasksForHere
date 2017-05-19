@@ -6,3 +6,25 @@ example code that now works:
         Recipe[] recipes = getRecipes(ingredients);
 
 https://market.mashape.com/edamam/recipe-search-and-diet
+
+
+Log in + Sign up:
+    - functionality (Fire base, Ori)
+    - User Parameters
+Main Activity:
+    - Feed (in the end, feed)
+FeedMe:
+    - Fix size of pics
+    - Add green buttons
+    - Collect the green ingridients (Ingerdients[]) and send in last submit to matcherAct(via put extra)
+    -
+Matcher:
+    - Skeleton
+    - Use user address to determine distance from other users (via google maps)
+    - Enter radius
+    - Service(send push notifications if match found, i.e both swiped)
+    - Iterate over the user list in the firebase, check for distance, if valid, show
+    on matcher. if swiped for approval, noritify an approved user list in the service.
+    And notify the service of the approved user as well. if match found. push notify.
+
+
