@@ -43,7 +43,12 @@ public class FeedMeActivity extends AppCompatActivity implements View.OnClickLis
         imBt5.setOnClickListener(this);
         imBt6.setOnClickListener(this);
         imBt7.setOnClickListener(this);
-        addPics(foodList1);
+
+        int id = getApplicationContext().getResources().getIdentifier("eggs_basic", "drawable", getApplicationContext().getPackageName());
+        Log.d("notes   " ,""+id);
+        imBt1.setImageResource(id);
+
+//        addPics(foodList1);
     }
 
 
@@ -76,9 +81,10 @@ public class FeedMeActivity extends AppCompatActivity implements View.OnClickLis
                 ImageButton curImBt = getImageButton(counter++);
                 if(curImBt != null){
                     Context context = curImBt.getContext();
+
                     int id = context.getResources().getIdentifier(productName, "drawable", context.getPackageName());
                     Log.d("notes   " ,""+id);
-//                    curImBt.setImageResource(id);
+                    curImBt.setImageResource(id);
                 }
             }
         }
